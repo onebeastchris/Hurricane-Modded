@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "a_1-19-3test",
+	"version": "${version}",
+	"name": "a_1-19-3test",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/a_119.3test/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"onebeastchris.hereAmI"
+		]
+	},
+	"mixins": [
+		"a_119.3test.mixins.json",
+		{
+			"config": "a_119.3test.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.14",
+		"minecraft": "~1.19.3",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
