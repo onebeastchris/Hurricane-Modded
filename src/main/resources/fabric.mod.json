@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"onebeastchris.hereAmI"
+          "onebeastchris.GeyserHacks"
 		]
 	},
 	"mixins": [

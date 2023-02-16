@@ -24,15 +24,17 @@ repositories {
 }
 
 loom {
-    splitEnvironmentSourceSets()
+	runConfigs.configureEach {
+		ideConfigGenerated = true
+	}
+	splitEnvironmentSourceSets()
 
-    mods {
-        modid {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
-    }
-
+	mods {
+		modid {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
 }
 
 dependencies {
