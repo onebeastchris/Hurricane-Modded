@@ -5,10 +5,11 @@ done:
 - mixin to disable bamboo/dripstone collision
 - mixinconfigplugin
 - event to listen to block placement
+- add config 90%
 
 todo:
 - add itemsteerablefix
 - actually check in the BlockPlaceEvent whether placing is allowed
-- add config (pls suggest gud lib)
 - add magic
-- ask camo whether i can publish this on modrinth
+
+Note: This project isn't officially supported by Camotoy; nor is it affiliated with GeyserMC. It is designed to work with Geyser/Floodgate though.
