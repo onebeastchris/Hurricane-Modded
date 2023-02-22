@@ -14,3 +14,5 @@ This project is unaffiliated with GeyserMC, and this port is not supported/made 
 If you need help/support, please use the "issues" tab here to report issues.
 
 Currently supports: 1.19.3
+
+Download on [Modrinth](https://modrinth.com/mod/geyserhacks-fabric)
