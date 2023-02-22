@@ -1,12 +1,11 @@
 # GeyserHacks-Fabric
 A fabric port of Camotoys GeyserHacks plugin. But for fabric servers - WIP
 
-done:
-- mixin to disable bamboo/dripstone collision
-- mixinconfigplugin
-- event to listen to block placement
+Various workarounds for Geyser players that modify the server in order to achieve better playability.
 
-todo:
-- add itemsteerablefix
-- add config (pls suggest gud lib)
-- add magic
+Issues with each workaround are listed in the config! Take your time to read them as the workarounds in this mod can be used for exploitative purposes.
+
+Fixes:
+
+- Bamboo and dripstone collision (by setting them to no server-side collision)
+- GeyserMC/Geyser#638 by letting the server control entities, just like Bedrock expects it to
