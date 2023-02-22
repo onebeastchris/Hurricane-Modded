@@ -1,13 +1,11 @@
 package onebeastchris.util;
 
 import net.fabricmc.loader.api.FabricLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.spongepowered.configurate.CommentedConfigurationNode;
 import org.spongepowered.configurate.ConfigurateException;
 import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.util.Objects;
 
 
 public class Config {
@@ -16,16 +14,14 @@ public class Config {
     private boolean bamboo;
     private boolean pointedDripstone;
 
-    private static GeyserHacksConfiguration config;
-
+    public static GeyserHacksConfiguration config;
 
     public Config() {
         final HoconConfigurationLoader loader = HoconConfigurationLoader.builder()
                 .path(FabricLoader.getInstance().getConfigDir().resolve("geyserhacks.conf"))
                 .defaultOptions(opts -> opts.header("Geyser "))
+                .prettyPrinting(true)
                 .build();
-
-        GeyserHacksConfiguration config;
 
         try {
             final CommentedConfigurationNode node = loader.load();
@@ -37,9 +33,9 @@ public class Config {
             return;
         }
 
-        this.itemSteerableFix = Objects.requireNonNull(config).itemSteerableFix();
-        this.bamboo = GeyserHacksConfiguration.CollisionFixes.bamboo();
-        this.pointedDripstone = GeyserHacksConfiguration.CollisionFixes.pointedDripstone();
+        this.itemSteerableFix = config.itemSteerableFix();
+        this.bamboo = config.collisionFixes().bamboo();
+        this.pointedDripstone = config.collisionFixes().pointedDripstone();
     }
 
     public boolean isItemSteerableFix() {

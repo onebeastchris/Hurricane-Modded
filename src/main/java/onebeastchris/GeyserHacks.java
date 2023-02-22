@@ -1,20 +1,20 @@
 package onebeastchris;
 
 import net.fabricmc.api.ModInitializer;
-
 import onebeastchris.util.BlockPlaceEvent;
 import onebeastchris.util.Config;
 import onebeastchris.util.PlatformUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static onebeastchris.mixin.MixinConfigPlugin.getConfig;
 public class GeyserHacks implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("GeyserHacks");
 
-	Config config = new Config();
+	Config config = getConfig();
 
 	@Override
 	public void onInitialize() {
@@ -32,7 +32,7 @@ public class GeyserHacks implements ModInitializer {
 		}
 		if (config.isBamboo() || config.isPointedDripstone()) {
 			BlockPlaceEvent.register();
-			LOGGER.info("BlockPlaceEvent registered, as Bamboo or PointedDripstone is enabled.");
+			LOGGER.info("BlockPlaceEvent registered, as the Bamboo or PointedDripstone fix is enabled.");
 		}
 	}
 }

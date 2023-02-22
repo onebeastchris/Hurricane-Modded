@@ -26,14 +26,14 @@ public final class GeyserHacksConfiguration {
 
     @ConfigSerializable
     static final class CollisionFixes {
-        private static boolean bamboo = true;
-        private static boolean pointedDripstone = true;
+        private boolean bamboo = true;
+        private boolean pointedDripstone = true;
 
-        public static boolean bamboo() {
+        public boolean bamboo() {
             return bamboo;
         }
 
-        public static boolean pointedDripstone() {
+        public boolean pointedDripstone() {
             return pointedDripstone;
         }
     }
