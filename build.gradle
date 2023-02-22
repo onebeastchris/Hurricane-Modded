@@ -53,7 +53,10 @@ dependencies {
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 
 	//configurate
-	implementation("org.spongepowered:configurate-hocon:4.1.2")
+	include(implementation("org.spongepowered:configurate-hocon:4.1.2"))
+	include(implementation("org.spongepowered:configurate-core:4.1.2"))
+	include(implementation("com.typesafe:config:1.4.2"))
+
 	// Floodgate API
 	compileOnly("org.geysermc.floodgate:api:2.2.0-SNAPSHOT")
 	// Geyser API
