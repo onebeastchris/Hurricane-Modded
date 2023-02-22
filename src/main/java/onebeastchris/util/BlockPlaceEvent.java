@@ -3,13 +3,9 @@ package onebeastchris.util;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
-import static onebeastchris.GeyserHacks.LOGGER;
 
 public class BlockPlaceEvent {
-
-    private ItemStack collisionFixItems;
     public static void register() {
        registerInteractBlockCallback();
     }
@@ -17,12 +13,18 @@ public class BlockPlaceEvent {
     private static void registerInteractBlockCallback() {
         UseBlockCallback.EVENT.register((playerEntity, world, hand, blockHitResult) -> {
             if (playerEntity.getStackInHand(hand).getItem().equals(Blocks.BAMBOO.asItem())) {
-                //todo: check if placed in themselves
-                return ActionResult.PASS;
+                if (blockHitResult.getBlockPos().equals(playerEntity.getBlockPos())) {
+                    return ActionResult.FAIL;
+                } else {
+                    return ActionResult.PASS;
+                }
             }
             if (playerEntity.getStackInHand(hand).getItem().equals(Blocks.POINTED_DRIPSTONE.asItem())) {
-                //todo: check if placed in themselves
-                return ActionResult.PASS;
+                if (blockHitResult.getBlockPos().equals(playerEntity.getBlockPos().add(0, -1, 0))) {
+                    return ActionResult.FAIL;
+                } else {
+                    return ActionResult.PASS;
+                }
             }
             return ActionResult.PASS;
         });

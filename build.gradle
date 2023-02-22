@@ -17,9 +17,10 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
-
+	mavenCentral();
 	maven {
 		url = uri("https://repo.opencollab.dev/maven-snapshots/")
+		mavenLocal()
 	}
 }
 
@@ -51,8 +52,12 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 
+	//configurate
+	include(modImplementation("org.spongepowered:configurate-hocon:4.1.2"))
 	// Floodgate API
 	compileOnly("org.geysermc.floodgate:api:2.2.0-SNAPSHOT")
+	// Geyser API
+	//compileOnly("org.geysermc:geyser-api:2.1.0-SNAPSHOT")
 }
 
 processResources {
@@ -71,7 +76,7 @@ java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.
 	// If you remove this line, sources will not be generated.
-	withSourcesJar()
+	//withSourcesJar()
 }
 
 jar {

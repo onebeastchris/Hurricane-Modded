@@ -1,6 +1,7 @@
 package onebeastchris.mixin;
 
 import net.fabricmc.loader.api.FabricLoader;
+import onebeastchris.util.Config;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -21,14 +22,13 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (mixinClassName.equals("onebeastchris.mixin.BambooBlockMixin")) {
-            //check config!
-            return true;
-        } else if (mixinClassName.equals("onebeastchris.mixin.PointedDripstoneBlockMixin")) {
-            //check config!
-            return false;
-        }
-        return true;
+        Config config = new Config();
+        return switch (mixinClassName) {
+            case "onebeastchris.mixin.BambooBlockMixin" -> config.isBamboo();
+            case "onebeastchris.mixin.PointedDripstoneBlockMixin" -> config.isPointedDripstone();
+            case "onebeastchris.mixin.ItemSteerableMixin" -> config.isItemSteerableFix();
+            default -> true;
+        };
     }
 
     @Override
