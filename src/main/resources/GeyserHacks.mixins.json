@@ -4,8 +4,9 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BambooBlockMixin",
+    "EntityMixin",
     "PointedDripstoneBlockMixin",
-    "EntityMixin"
+    "ServerPlayerInteractionManagerMixin"
   ],
   "plugin": "onebeastchris.mixin.MixinConfigPlugin",
   "injectors": {

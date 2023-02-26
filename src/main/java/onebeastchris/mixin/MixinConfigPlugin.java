@@ -24,9 +24,10 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         return switch (mixinClassName) {
-            case "onebeastchris.mixin.ItemSteerableMixin" -> config.isItemSteerableFix();
-            case "onebeastchris.mixin.BambooMixin" -> config.isBamboo();
-            case "onebeastchris.mixin.PointedDripstoneMixin" -> config.isPointedDripstone();
+            case "onebeastchris.mixin.EntityMixin" -> config.isItemSteerableFix();
+            case "onebeastchris.mixin.BambooBlockMixin" -> config.isBamboo();
+            case "onebeastchris.mixin.PointedDripstoneBlockMixin" -> config.isPointedDripstone();
+            case "onebeastchris.mixin.ServerPlayerInteractionManagerMixin" -> config.isSuppressWarnings();
             default -> true;
         };
     }

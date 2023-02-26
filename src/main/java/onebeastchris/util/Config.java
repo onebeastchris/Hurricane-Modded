@@ -10,6 +10,7 @@ import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 
 public class Config {
     private static final Logger LOGGER = LoggerFactory.getLogger("GeyserHacks");
+    private boolean suppressWarnings;
     private boolean itemSteerableFix;
     private boolean bamboo;
     private boolean pointedDripstone;
@@ -36,6 +37,7 @@ public class Config {
         this.itemSteerableFix = config.itemSteerableFix();
         this.bamboo = config.collisionFixes().bamboo();
         this.pointedDripstone = config.collisionFixes().pointedDripstone();
+        this.suppressWarnings = config.suppressWarnings();
     }
 
     public boolean isItemSteerableFix() {
@@ -48,5 +50,9 @@ public class Config {
 
     public boolean isPointedDripstone() {
         return pointedDripstone;
+    }
+
+    public boolean isSuppressWarnings() {
+        return suppressWarnings;
     }
 }

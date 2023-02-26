@@ -3,7 +3,7 @@
 	"id": "geyserhacks",
 	"version": "${version}",
 	"name": "geyserhacks",
-	"description": "Hacky fixes to make bedrock players happy, such as itemsteerable fix (riding striders/pigs, and bamboo/dripstone collision fix. Fabric port of GeyserHacks by Camotoy.",
+	"description": "Hacky fixes to make bedrock players happy, such as itemsteerable fix (riding striders/pigs), and bamboo/dripstone collision fix. Fabric port of GeyserHacks by Camotoy.",
 	"authors": [
 		"onebeastchris"
 	],
@@ -23,8 +23,8 @@
 		"GeyserHacks.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.14",
-		"minecraft": "~1.19.3",
+		"fabricloader": ">=0.14.11",
+		"minecraft": "1.19.3",
 		"java": ">=17",
 		"fabric-api": "*"
 	},
