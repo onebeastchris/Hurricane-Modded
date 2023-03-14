@@ -53,6 +53,7 @@ dependencies {
 	include(implementation("org.spongepowered:configurate-hocon:4.1.2"))
 	include(implementation("org.spongepowered:configurate-core:4.1.2"))
 	include(implementation("com.typesafe:config:1.4.2"))
+	include(implementation("io.leangen.geantyref:geantyref:1.3.14"))
 
 	// Floodgate API
 	compileOnly("org.geysermc.floodgate:api:2.2.0-SNAPSHOT")
