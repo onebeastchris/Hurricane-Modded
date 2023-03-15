@@ -1,6 +1,5 @@
 package onebeastchris.util;
 
-import net.fabricmc.loader.api.FabricLoader;
 import org.geysermc.floodgate.api.FloodgateApi;
 
 import java.util.UUID;

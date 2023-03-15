@@ -8,7 +8,7 @@
 		"onebeastchris"
 	],
 	"contact": {
-		"homepage": "github.com/onebeastchris",
+		"homepage": "https://github.com/onebeastchris",
 		"sources": "https://github.com/onebeastchris/GeyserHacks-Fabric"
 	},
 	"license": "MIT",
@@ -23,8 +23,8 @@
 		"GeyserHacks.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.11",
-		"minecraft": "1.19.3",
+		"fabricloader": ">=0.14.06",
+		"minecraft": "1.19.2",
 		"java": ">=17",
 		"fabric-api": "*"
 	},
