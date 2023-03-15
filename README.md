@@ -14,6 +14,6 @@ Fixes:
 This project is unaffiliated with GeyserMC, and this port is not supported/made by Camotoy. However, this mod is made to work with Geyser.
 If you need help/support, please use the "issues" tab here to report issues.
 
-Currently supports: 1.19.3
+Currently supports: 1.19.3, 1.19.4
 
 Download on [Modrinth](https://modrinth.com/mod/geyserhacks-fabric)
