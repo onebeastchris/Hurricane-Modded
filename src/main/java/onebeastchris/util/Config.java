@@ -15,18 +15,18 @@ public class Config {
     private boolean bamboo;
     private boolean pointedDripstone;
 
-    public static GeyserHacksConfiguration config;
+    public static HurricaneConfiguration config;
 
     public Config() {
         final HoconConfigurationLoader loader = HoconConfigurationLoader.builder()
-                .path(FabricLoader.getInstance().getConfigDir().resolve("geyserhacks.conf"))
-                .defaultOptions(opts -> opts.header("Geyser "))
+                .path(FabricLoader.getInstance().getConfigDir().resolve("hurricane.conf"))
+                .defaultOptions(opts -> opts.header("Hurricane "))
                 .prettyPrinting(true)
                 .build();
 
         try {
             final CommentedConfigurationNode node = loader.load();
-            config = node.get(GeyserHacksConfiguration.class);
+            config = node.get(HurricaneConfiguration.class);
             loader.save(node);
         } catch (ConfigurateException e) {
             LOGGER.warn("Could not load config!");

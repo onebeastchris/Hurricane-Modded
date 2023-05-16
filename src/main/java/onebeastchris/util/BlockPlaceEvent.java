@@ -15,15 +15,12 @@ public class BlockPlaceEvent {
             if (playerEntity.getStackInHand(hand).getItem().equals(Blocks.BAMBOO.asItem())) {
                 if (blockHitResult.getBlockPos().equals(playerEntity.getBlockPos())) {
                     return ActionResult.FAIL;
-                } else {
-                    return ActionResult.PASS;
                 }
             }
             if (playerEntity.getStackInHand(hand).getItem().equals(Blocks.POINTED_DRIPSTONE.asItem())) {
                 if (blockHitResult.getBlockPos().equals(playerEntity.getBlockPos().add(0, -1, 0))) {
+                    //you can place dripstone in yourself
                     return ActionResult.FAIL;
-                } else {
-                    return ActionResult.PASS;
                 }
             }
             return ActionResult.PASS;
