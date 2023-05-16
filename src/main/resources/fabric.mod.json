@@ -1,26 +1,26 @@
 {
 	"schemaVersion": 1,
-	"id": "geyserhacks",
+	"id": "hurricane",
 	"version": "${version}",
-	"name": "geyserhacks",
-	"description": "Hacky fixes to make bedrock players happy, such as itemsteerable fix (riding striders/pigs), and bamboo/dripstone collision fix. Fabric port of GeyserHacks by Camotoy.",
+	"name": "Hurricane",
+	"description": "Hacky fixes to make Bedrock players that join via Geyser happy. Such as: no lagback with bamboo/dripstone, or the ability to ride striders/pigs. Fabric port of Hurricane by GeyserMC.",
 	"authors": [
 		"onebeastchris"
 	],
 	"contact": {
-		"homepage": "github.com/onebeastchris",
-		"sources": "https://github.com/onebeastchris/GeyserHacks-Fabric"
+		"homepage": "https://github.com/onebeastchris",
+		"sources": "https://github.com/onebeastchris/Hurricane-Fabric"
 	},
 	"license": "MIT",
-	"icon": "assets/geyserhacks/icon.png",
+	"icon": "assets/Hurricane/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "onebeastchris.GeyserHacks"
+          "onebeastchris.Hurricane"
 		]
 	},
 	"mixins": [
-		"GeyserHacks.mixins.json"
+		"Hurricane.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.7",

@@ -8,11 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static onebeastchris.mixin.MixinConfigPlugin.getConfig;
-public class GeyserHacks implements ModInitializer {
+public class Hurricane implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger("GeyserHacks");
+	public static final Logger LOGGER = LoggerFactory.getLogger("Hurricane");
 	Config config = getConfig();
 
 	@Override
@@ -21,17 +21,15 @@ public class GeyserHacks implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Loading GeyserHacks-Fabric");
+		LOGGER.info("Loading Hurricane");
 		if (config.isItemSteerableFix()) {
-			if (PlatformUtils.isGeyserOrFloodgateInstalled()){
-				LOGGER.info("ItemSteerableFix enabled.");
-			} else {
-				LOGGER.info("ItemSteerableFix is enabled, but Geyser or Floodgate is not installed. The ItemSteerable fix will not work.");
+			if (!PlatformUtils.isGeyserOrFloodgateInstalled()) {
+				LOGGER.warn("Hurricane's fix for item steerable mobs is enabled, but Geyser or Floodgate is not installed. To fix this, install floodgate-fabric.");
 			}
 		}
 		if (config.isBamboo() || config.isPointedDripstone()) {
 			BlockPlaceEvent.register();
-			LOGGER.info("BlockPlaceEvent registered, as the Bamboo or PointedDripstone fix is enabled.");
+			LOGGER.debug("BlockPlaceEvent registered, as the Bamboo or PointedDripstone fix is enabled.");
 		}
 	}
 }

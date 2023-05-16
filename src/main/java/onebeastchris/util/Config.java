@@ -14,7 +14,9 @@ public class Config {
     private boolean itemSteerableFix;
     private boolean bamboo;
     private boolean pointedDripstone;
-    public static GeyserHacksConfiguration config;
+
+    public static HurricaneConfiguration config;
+
     public Config() {
         final HoconConfigurationLoader loader = HoconConfigurationLoader.builder()
                 .path(FabricLoader.getInstance().getConfigDir().resolve("geyserhacks.conf"))
@@ -24,7 +26,7 @@ public class Config {
 
         try {
             final CommentedConfigurationNode node = loader.load();
-            config = node.get(GeyserHacksConfiguration.class);
+            config = node.get(HurricaneConfiguration.class);
             loader.save(node);
         } catch (ConfigurateException e) {
             LOGGER.warn("Could not load config!");
@@ -41,12 +43,15 @@ public class Config {
     public boolean isItemSteerableFix() {
         return itemSteerableFix;
     }
+
     public boolean isBamboo() {
         return bamboo;
     }
+
     public boolean isPointedDripstone() {
         return pointedDripstone;
     }
+
     public boolean isSuppressWarnings() {
         return suppressWarnings;
     }

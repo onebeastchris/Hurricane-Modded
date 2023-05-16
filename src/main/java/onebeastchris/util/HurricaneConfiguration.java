@@ -5,7 +5,7 @@ import org.spongepowered.configurate.objectmapping.meta.Comment;
 
 @ConfigSerializable
 @SuppressWarnings("FieldMayBeFinal")
-public final class GeyserHacksConfiguration {
+public final class HurricaneConfiguration {
     @Comment("""
             "Fixes" Bedrock players running into lagback issues on certain blocks by removing any collision detection from the given block.
             Caveats: a custom client - Java or Bedrock - could take advantage of no collision and walk right through.
