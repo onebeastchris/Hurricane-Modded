@@ -1,3 +1,4 @@
+![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)
 <img src="https://i.imgur.com/iaETp3c.png" alt="" width="200" >
  
 # Hurricane-Fabric
