@@ -1,8 +1,11 @@
-# GeyserHacks-Fabric
-A fabric port of Camotoys GeyserHacks plugin. But for fabric servers - WIP
+![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)
+<img src="https://i.imgur.com/iaETp3c.png" alt="" width="200" >
+ 
+# Hurricane-Fabric
+A fabric port of GeyserMC's Hurricane (before: Camotoys GeyserHacks) plugin. But for fabric servers.
+Download on [Modrinth](https://modrinth.com/mod/hurricane)
 
 Various workarounds for Geyser players that modify the server in order to achieve better playability.
-
 Issues with each workaround are listed in the config! Take your time to read them as the workarounds in this mod can be used for exploitative purposes.
 
 Fixes:
@@ -14,6 +17,6 @@ Fixes:
 This project is unaffiliated with GeyserMC, and this port is not supported/made by Camotoy. However, this mod is made to work with Geyser.
 If you need help/support, please use the "issues" tab here to report issues.
 
-Currently supports: 1.19.3, 1.19.4
+Currently supports: 1.19.2 - 1.20
 
-Download on [Modrinth](https://modrinth.com/mod/geyserhacks-fabric)
+Download on [Modrinth](https://modrinth.com/mod/hurricane)
