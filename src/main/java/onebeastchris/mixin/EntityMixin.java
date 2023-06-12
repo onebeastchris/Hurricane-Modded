@@ -1,6 +1,7 @@
 package onebeastchris.mixin;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ItemSteerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import onebeastchris.util.PlatformUtils;
@@ -19,7 +20,9 @@ public abstract class EntityMixin {
     private void isLogicalSideForUpdatingMovement(CallbackInfoReturnable<Boolean> cir) {
         if (this.getControllingPassenger() instanceof PlayerEntity player) {
             if (PlatformUtils.isBedrockPlayer(player.getUuid())) {
+                if (this instanceof ItemSteerable) {
                     cir.setReturnValue(true);
+                }
             }
         }
     }
