@@ -1,4 +1,4 @@
-package onebeastchris.mixin;
+package net.onebeastchris.mixin;
 
 import net.minecraft.server.network.ServerPlayerInteractionManager;
 import org.spongepowered.asm.mixin.Mixin;

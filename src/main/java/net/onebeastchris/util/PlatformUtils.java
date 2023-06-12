@@ -1,4 +1,4 @@
-package onebeastchris.util;
+package net.onebeastchris.util;
 
 import org.geysermc.floodgate.api.FloodgateApi;
 

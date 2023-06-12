@@ -1,4 +1,4 @@
-package onebeastchris.util;
+package net.onebeastchris.util;
 
 import org.spongepowered.configurate.objectmapping.ConfigSerializable;
 import org.spongepowered.configurate.objectmapping.meta.Comment;

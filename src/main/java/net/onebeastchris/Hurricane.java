@@ -1,13 +1,13 @@
-package onebeastchris;
+package net.onebeastchris;
 
 import net.fabricmc.api.ModInitializer;
-import onebeastchris.util.BlockPlaceEvent;
-import onebeastchris.util.Config;
-import onebeastchris.util.PlatformUtils;
+import net.onebeastchris.util.BlockPlaceEvent;
+import net.onebeastchris.util.Config;
+import net.onebeastchris.util.PlatformUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static onebeastchris.mixin.MixinConfigPlugin.getConfig;
+import static net.onebeastchris.mixin.MixinConfigPlugin.getConfig;
 public class Hurricane implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -24,7 +24,7 @@ public class Hurricane implements ModInitializer {
 		LOGGER.info("Loading Hurricane");
 		if (config.isItemSteerableFix()) {
 			if (!PlatformUtils.isGeyserOrFloodgateInstalled()) {
-				LOGGER.warn("Hurricane's fix for item steerable mobs is enabled, but Geyser or Floodgate is not installed. To fix this, install floodgate-fabric.");
+				LOGGER.warn("hurricane's fix for item steerable mobs is enabled, but Geyser or Floodgate is not installed. To fix this, install floodgate-fabric.");
 			}
 		}
 		if (config.isBamboo() || config.isPointedDripstone()) {

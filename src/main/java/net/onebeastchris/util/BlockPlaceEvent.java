@@ -1,4 +1,4 @@
-package onebeastchris.util;
+package net.onebeastchris.util;
 
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;

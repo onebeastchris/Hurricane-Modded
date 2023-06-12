@@ -12,23 +12,20 @@
 		"sources": "https://github.com/onebeastchris/Hurricane-Fabric"
 	},
 	"license": "MIT",
-	"icon": "assets/Hurricane/icon.png",
+	"icon": "assets/hurricane/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "onebeastchris.Hurricane"
+          "net.onebeastchris.Hurricane"
 		]
 	},
 	"mixins": [
-		"Hurricane.mixins.json"
+		"hurricane.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
 		"minecraft": "1.20",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }

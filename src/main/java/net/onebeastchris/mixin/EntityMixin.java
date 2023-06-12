@@ -1,9 +1,9 @@
-package onebeastchris.mixin;
+package net.onebeastchris.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import onebeastchris.util.PlatformUtils;
+import net.onebeastchris.util.PlatformUtils;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

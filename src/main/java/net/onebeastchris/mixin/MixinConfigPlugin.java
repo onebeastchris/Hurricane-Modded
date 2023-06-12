@@ -1,6 +1,6 @@
-package onebeastchris.mixin;
+package net.onebeastchris.mixin;
 
-import onebeastchris.util.Config;
+import net.onebeastchris.util.Config;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -24,10 +24,10 @@ public class MixinConfigPlugin implements IMixinConfigPlugin {
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         return switch (mixinClassName) {
-            case "onebeastchris.mixin.EntityMixin" -> config.isItemSteerableFix();
-            case "onebeastchris.mixin.BambooBlockMixin" -> config.isBamboo();
-            case "onebeastchris.mixin.PointedDripstoneBlockMixin" -> config.isPointedDripstone();
-            case "onebeastchris.mixin.ServerPlayerInteractionManagerMixin" -> config.isSuppressWarnings();
+            case "net.onebeastchris.mixin.EntityMixin" -> config.isItemSteerableFix();
+            case "net.onebeastchris.mixin.BambooBlockMixin" -> config.isBamboo();
+            case "net.onebeastchris.mixin.PointedDripstoneBlockMixin" -> config.isPointedDripstone();
+            case "net.onebeastchris.mixin.ServerPlayerInteractionManagerMixin" -> config.isSuppressWarnings();
             default -> true;
         };
     }

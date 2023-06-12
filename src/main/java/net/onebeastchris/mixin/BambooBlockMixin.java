@@ -1,4 +1,4 @@
-package onebeastchris.mixin;
+package net.onebeastchris.mixin;
 
 import net.minecraft.block.BambooBlock;
 import net.minecraft.block.Block;
