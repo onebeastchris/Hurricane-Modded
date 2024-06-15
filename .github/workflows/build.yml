@@ -35,14 +35,14 @@ jobs:
         run: ./gradlew neoforge:modrinth
 
       - name: Archive Artifacts (fabric)
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        uses: actions/upload-artifact@552bf3722c16e81001aea7db72d8cedf64eb5f68
         if: success()
         with:
           name: Hurricane Fabric
           path: fabric/build/libs/hurricane-fabric-*.jar
           if-no-files-found: error
       - name: Archive Artifacts (neoforge)
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        uses: actions/upload-artifact@552bf3722c16e81001aea7db72d8cedf64eb5f68
         if: success()
         with:
           name: Hurricane NeoForge
