@@ -25,14 +25,12 @@ jobs:
       - name: Publish to Modrinth (Fabric)
         if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
         env:
-          BUILD_NUMBER: ${{ steps.release-info.outputs.curentRelease }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
         run: ./gradlew fabric:modrinth
 
       - name: Publish to Modrinth (NeoForge)
         if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
         env:
-          BUILD_NUMBER: ${{ steps.release-info.outputs.curentRelease }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
         run: ./gradlew neoforge:modrinth
 
@@ -41,12 +39,12 @@ jobs:
         if: success()
         with:
           name: Hurricane Fabric
-          path: fabric/build/libs/hurricane-fabric.jar
+          path: fabric/build/libs/hurricane-fabric-*.jar
           if-no-files-found: error
       - name: Archive Artifacts (neoforge)
         uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
         if: success()
         with:
           name: Hurricane NeoForge
-          path: neoforge/build/libs/hurricane-neoforge.jar
+          path: neoforge/build/libs/hurricane-neoforge-*.jar
           if-no-files-found: error
