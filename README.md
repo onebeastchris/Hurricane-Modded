@@ -1,8 +1,7 @@
 ![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)
-<img src="https://i.imgur.com/iaETp3c.png" alt="" width="200" >
  
-# Hurricane-Fabric
-A fabric port of GeyserMC's Hurricane (before: Camotoys GeyserHacks) plugin. But for fabric servers.
+# Hurricane-Modded
+A Fabric/NeoForge port of GeyserMC's Hurricane (before: Camotoys GeyserHacks) plugin. But for modded servers!
 Download on [Modrinth](https://modrinth.com/mod/hurricane)
 
 Various workarounds for Geyser players that modify the server in order to achieve better playability.
@@ -15,8 +14,8 @@ Fixes:
 - optionally: suppress "Mismatch in destroy block pos" warnings
 
 This project is unaffiliated with GeyserMC, and this port is not supported/made by Camotoy. However, this mod is made to work with Geyser.
-If you need help/support, please use the "issues" tab here to report issues.
+If you need help/support, please use the "issues" tab here to report issues, or join the support discord: https://discord.gg/nzrJbNMR9S
 
-Currently supports: 1.19.2, 1.19.3, 1.19.4, 1.20
+Currently supported versions: 1.21 (Fabric/NeoForge); older builds are available on Modrinth (1.19-1.20.6)
 
 Download on [Modrinth](https://modrinth.com/mod/hurricane)

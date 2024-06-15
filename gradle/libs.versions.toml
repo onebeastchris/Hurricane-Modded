@@ -1,0 +1,46 @@
+[versions]
+geyser = "2.2.3-SNAPSHOT"
+shadow = "8.1.1"
+architectury-plugin = "3.4-SNAPSHOT"
+architectury-loom = "1.6-SNAPSHOT"
+minecraft-version = "1.21"
+minotaur = "2.+"
+lombok = "8.6"
+mixin = "0.8.5"
+configurate = "4.1.2"
+typesafe = "1.4.2"
+geantyref = "1.3.14"
+asm = "5.2"
+floodgate = "2.2.3-SNAPSHOT"
+
+# fabric
+fabric-loader = "0.15.11"
+fabric-api = "0.100.1+1.21"
+
+# neoforge
+neoforge-version = "21.0.0-beta"
+
+[libraries]
+geyser-api = { group = "org.geysermc.geyser", name = "api", version.ref = "geyser" }
+floodgate-api = { group = "org.geysermc.floodgate", name = "api", version.ref = "floodgate" }
+shadow = { group = "com.github.johnrengelman", name = "shadow", version.ref = "shadow" }
+architectury-plugin = { group = "architectury-plugin", name = "architectury-plugin.gradle.plugin", version.ref = "architectury-plugin" }
+architectury-loom = { group = "dev.architectury.loom", name = "dev.architectury.loom.gradle.plugin", version.ref = "architectury-loom" }
+minotaur = { group = "com.modrinth.minotaur", name = "Minotaur", version.ref = "minotaur" }
+mixin = { group = "org.spongepowered", name = "mixin", version.ref = "mixin" }
+asm = { group = "org.ow2.asm", name = "asm-debug-all", version.ref = "asm" }
+minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft-version" }
+configurate-hocon = { group = "org.spongepowered", name = "configurate-hocon", version.ref = "configurate" }
+configurate-core = { group = "org.spongepowered", name = "configurate-core", version.ref = "configurate" }
+typesafe = { group = "com.typesafe", name = "config", version.ref = "typesafe" }
+geantyref = { group = "io.leangen.geantyref", name = "geantyref", version.ref = "geantyref" }
+
+# Fabric
+fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabric-loader" }
+fabric-api = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fabric-api" }
+
+# NeoForge
+neoforge = { group = "net.neoforged", name = "neoforge", version.ref = "neoforge-version" }
+
+[plugins]
+lombok = { id = "io.freefair.lombok", version.ref = "lombok" }

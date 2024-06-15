@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "net.onebeastchris.hurricane.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BambooBlockMixin",
+    "EntityMixin",
+    "PointedDripstoneBlockMixin",
+    "ServerPlayerInteractionManagerMixin"
+  ],
+  "plugin": "net.onebeastchris.hurricane.mixin.MixinConfigPlugin",
+  "injectors": {
+    "defaultRequire": 1
+	}
+}
