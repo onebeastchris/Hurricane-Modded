@@ -9,8 +9,6 @@ on:
      - 'LICENSE'
      - 'README.md'
      - 'licenseheader.txt'
-   branches:
-     - '1.21'
 
 jobs:
   build:
@@ -24,13 +22,20 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 21
-      - name: Publish to Modrinth
-        uses: gradle/gradle-build-action@3bfe3a46584a206fb8361cdedd0647b0c4204232
+      - name: Publish to Modrinth (Fabric)
+        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
         env:
+          BUILD_NUMBER: ${{ steps.release-info.outputs.curentRelease }}
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-        with:
-          arguments: modrinth
-          gradle-home-cache-cleanup: true
+        run: ./gradlew fabric:modrinth
+
+      - name: Publish to Modrinth (NeoForge)
+        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
+        env:
+          BUILD_NUMBER: ${{ steps.release-info.outputs.curentRelease }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        run: ./gradlew neoforge:modrinth
+
       - name: Archive Artifacts (fabric)
         uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
         if: success()
