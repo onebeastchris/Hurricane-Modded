@@ -9,6 +9,8 @@ on:
      - 'LICENSE'
      - 'README.md'
      - 'licenseheader.txt'
+   branches:
+     - '1.21'
 
 jobs:
   build:
