@@ -2,18 +2,13 @@ name: Publish
 
 on:
   workflow_dispatch:
- #push:
- #  paths-ignore:
- #    - '.github/ISSUE_TEMPLATE/*.yml'
- #    - '.github/workflows/build-remote.yml'
- #    - '.github/workflows/preview.yml'
- #    - '.github/workflows/pull-request.yml'
- #    - '.idea/copyright/*.xml'
- #    - '.gitignore'
- #    - 'CONTRIBUTING.md'
- #    - 'LICENSE'
- #    - 'README.md'
- #    - 'licenseheader.txt'
+  push:
+   paths-ignore:
+     - '.gitignore'
+     - 'CONTRIBUTING.md'
+     - 'LICENSE'
+     - 'README.md'
+     - 'licenseheader.txt'
 
 jobs:
   build:
