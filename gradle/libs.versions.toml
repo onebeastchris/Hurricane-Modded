@@ -1,7 +1,7 @@
 [versions]
 geyser = "2.2.3-SNAPSHOT"
 shadow = "8.1.1"
-architectury-plugin = "3.4-SNAPSHOT"
+architectury-plugin = "3.4.155"
 architectury-loom = "1.6-SNAPSHOT"
 minecraft-version = "1.21"
 minotaur = "2.+"
