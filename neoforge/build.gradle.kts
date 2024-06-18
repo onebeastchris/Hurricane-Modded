@@ -28,6 +28,9 @@ tasks {
     remapJar {
         archiveBaseName.set("hurricane-neoforge")
     }
+    remapModrinthJar {
+        archiveBaseName.set("hurricane-neoforge")
+    }
 }
 
 modrinth {

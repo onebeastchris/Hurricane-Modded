@@ -16,6 +16,9 @@ tasks {
     remapJar {
         archiveBaseName.set("hurricane-fabric")
     }
+    remapModrinthJar {
+        archiveBaseName.set("hurricane-fabric")
+    }
 }
 
 dependencies {
