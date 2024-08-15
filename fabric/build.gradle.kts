@@ -33,6 +33,11 @@ dependencies {
     include(libs.configurate.core)
     include(libs.geantyref)
     include(libs.typesafe)
+
+    modLocalRuntime(libs.configurate.hocon)
+    modLocalRuntime(libs.configurate.core)
+    modLocalRuntime(libs.geantyref)
+    modLocalRuntime(libs.typesafe)
 }
 
 modrinth {

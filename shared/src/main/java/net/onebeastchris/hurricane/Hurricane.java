@@ -11,18 +11,22 @@ public abstract class Hurricane {
 	private final Config config = MixinConfigPlugin.getConfig();
 
 	protected void onHurricaneInitialize() {
-		LOGGER.info("Starting Hurricane...");
-		if (config.isItemSteerableFix()) {
-			if (!BedrockUtils.isGeyserOrFloodgateInstalled()) {
-				LOGGER.warn("Hurricane's fix for item steerable mobs is enabled, but Geyser or Floodgate is not installed! This will not work.");
-			}
+		if (config.isBamboo() && !BedrockUtils.isGeyserOrFloodgateInstalled()) {
+			LOGGER.warn("Bamboo fix is enabled, but Geyser or Floodgate are not found! Without these mods, Hurricane cannot " +
+					"fix the bamboo lag-back for Bedrock players.");
 		}
 
 		if (config.isBamboo() || config.isPointedDripstone()) {
 			registerBlockPlaceEvent();
 			LOGGER.debug("BlockPlaceEvent registered, as the Bamboo or PointedDripstone fix is enabled.");
 		}
+
 		LOGGER.info("Started Hurricane!");
+
+		if (Config.shouldWarn) {
+			LOGGER.warn("Removed the item steerable configuration option, as Geyser now supports it natively! " +
+					"Please update Geyser if you have not done so already!");
+		}
 	}
 
 	public abstract void registerBlockPlaceEvent();
