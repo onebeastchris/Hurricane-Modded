@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.Slice;
 
-@Mixin(value = ServerPlayerGameMode.class, remap = false)
+@Mixin(value = ServerPlayerGameMode.class)
 public class ServerPlayerInteractionManagerMixin {
     @Redirect(method = "handleBlockBreakAction",
             slice = @Slice(from = @At(value = "CONSTANT", args = "stringValue=Mismatch in destroy block pos: {} {}", ordinal = 0)),
