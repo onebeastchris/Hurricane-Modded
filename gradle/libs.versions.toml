@@ -2,7 +2,7 @@
 geyser = "2.2.3-SNAPSHOT"
 shadow = "8.1.1"
 architectury-plugin = "3.4-SNAPSHOT"
-architectury-loom = "1.6-SNAPSHOT"
+architectury-loom = "1.7.414"
 minecraft-version = "1.21.3"
 minotaur = "2.+"
 lombok = "8.6"
@@ -18,7 +18,7 @@ fabric-loader = "0.16.8"
 fabric-api = "0.107.3+1.21.3"
 
 # neoforge
-neoforge-version = "21.0.0-beta"
+neoforge-version = "21.3.0-beta"
 
 [libraries]
 geyser-api = { group = "org.geysermc.geyser", name = "api", version.ref = "geyser" }
