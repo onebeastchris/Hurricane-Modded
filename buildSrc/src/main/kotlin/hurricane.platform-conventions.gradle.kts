@@ -63,6 +63,6 @@ modrinth {
     changelog.set(rootProject.file("CHANGELOG.md").readText())
 
     uploadFile.set(tasks.getByPath("remapModrinthJar"))
-    gameVersions.addAll("1.21")
+    gameVersions.addAll("1.21.3")
     failSilently.set(false)
 }

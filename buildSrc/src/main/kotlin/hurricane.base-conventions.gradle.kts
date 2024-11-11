@@ -12,7 +12,7 @@ tasks {
                 "description" to "Hacky fixes to make Bedrock players that join via Geyser happy. Fabric port of Hurricane by GeyserMC.",
                 "url" to "https://geysermc.org",
                 "author" to "onebeastchris",
-                "minecraft_version" to "1.21"
+                "minecraft_version" to "1.21.3"
             )
         }
     }
