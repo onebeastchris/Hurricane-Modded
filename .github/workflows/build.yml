@@ -22,17 +22,17 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 21
-      - name: Publish to Modrinth (Fabric)
-        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
-        env:
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-        run: ./gradlew fabric:modrinth
+      #- name: Publish to Modrinth (Fabric)
+      #  if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
+      #  env:
+      #    MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+      #  run: ./gradlew fabric:modrinth
 
-      - name: Publish to Modrinth (NeoForge)
-        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
-        env:
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-        run: ./gradlew neoforge:modrinth
+      #- name: Publish to Modrinth (NeoForge)
+      #  if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
+      #  env:
+      #    MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+      #  run: ./gradlew neoforge:modrinth
 
       - name: Archive Artifacts (fabric)
         uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
