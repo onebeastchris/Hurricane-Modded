@@ -23,7 +23,7 @@
 		"hurricane.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.21",
+		"fabricloader": ">=0.16.8",
 		"minecraft": ">=$minecraft_version",
 		"java": ">=21",
 		"fabric-api": "*"
