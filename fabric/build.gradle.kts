@@ -23,7 +23,7 @@ tasks {
                 include("fabric.mod.json")
             }
         )
-        archiveBaseName.set("Geyser-Fabric")
+        archiveBaseName.set("hurricane-fabric")
     }
 }
 

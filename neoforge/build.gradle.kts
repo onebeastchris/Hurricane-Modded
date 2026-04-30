@@ -33,7 +33,7 @@ tasks {
                 include("META-INF/jarjar/**")
             }
         )
-        archiveBaseName.set("Geyser-NeoForge")
+        archiveBaseName.set("hurricane-neoforge")
     }
 }
 
