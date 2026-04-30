@@ -2,10 +2,6 @@ architectury {
     common("neoforge", "fabric")
 }
 
-loom {
-    mixin.defaultRefmapName.set("hurricane-refmap.json")
-}
-
 dependencies {
     compileOnly(libs.floodgate.api)
     compileOnly(libs.geyser.api)

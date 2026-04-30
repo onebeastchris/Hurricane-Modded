@@ -15,7 +15,7 @@ configurations {
 
 dependencies {
     neoForge(libs.neoforge)
-    common(project(":shared", configuration = "namedElements")) { isTransitive = false }
+    common(project(":shared")) { isTransitive = false }
     shadow(project(path = ":shared", configuration = "transformProductionNeoForge")) { isTransitive = false }
 
     include(libs.configurate.hocon)
@@ -25,11 +25,15 @@ dependencies {
 }
 
 tasks {
-    remapJar {
-        archiveBaseName.set("hurricane-neoforge")
-    }
-    remapModrinthJar {
-        archiveBaseName.set("hurricane-neoforge")
+    named<Jar>("mergeShadowAndJarJar") {
+        from(
+            zipTree(shadowJar.map { it.outputs.files.singleFile }),
+            zipTree(jar.map { it.outputs.files.singleFile }).matching {
+                include("META-INF/jars/**")
+                include("META-INF/jarjar/**")
+            }
+        )
+        archiveBaseName.set("Geyser-NeoForge")
     }
 }
 
