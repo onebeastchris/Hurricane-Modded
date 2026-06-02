@@ -13,18 +13,24 @@ configurations {
 }
 
 tasks {
-    remapJar {
-        archiveBaseName.set("hurricane-fabric")
-    }
-    remapModrinthJar {
+    named<Jar>("mergeShadowAndJarJar") {
+        from (
+            zipTree( shadowJar.map { it.outputs.files.singleFile } ).matching {
+                exclude("fabric.mod.json")
+            },
+            zipTree( jar.map { it.outputs.files.singleFile } ).matching {
+                include("META-INF/jars/**")
+                include("fabric.mod.json")
+            }
+        )
         archiveBaseName.set("hurricane-fabric")
     }
 }
 
 dependencies {
-    modImplementation(libs.fabric.loader)
-    modApi(libs.fabric.api)
-    common(project(":shared", configuration = "namedElements")) { isTransitive = false }
+    implementation(libs.fabric.loader)
+    api(libs.fabric.api)
+    common(project(":shared")) { isTransitive = false }
     shadow(project(path = ":shared", configuration = "transformProductionFabric")) {
         isTransitive = false
     }
@@ -34,10 +40,10 @@ dependencies {
     include(libs.geantyref)
     include(libs.typesafe)
 
-    modLocalRuntime(libs.configurate.hocon)
-    modLocalRuntime(libs.configurate.core)
-    modLocalRuntime(libs.geantyref)
-    modLocalRuntime(libs.typesafe)
+    localRuntime(libs.configurate.hocon)
+    localRuntime(libs.configurate.core)
+    localRuntime(libs.geantyref)
+    localRuntime(libs.typesafe)
 }
 
 modrinth {

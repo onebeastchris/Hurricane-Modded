@@ -1,10 +1,7 @@
-import gradle.kotlin.dsl.accessors._e054d9723d982fdb55b1e388b8ab0cbf.build
-import net.fabricmc.loom.task.RemapJarTask
-
 plugins {
     id("hurricane.shadow-conventions")
     id("architectury-plugin")
-    id("dev.architectury.loom")
+    id("dev.architectury.loom-no-remap")
     id("com.modrinth.minotaur")
 }
 
@@ -22,34 +19,39 @@ loom {
 
 dependencies {
     minecraft(libs.minecraft)
-    mappings(loom.officialMojangMappings())
 }
 
 tasks {
     shadowJar {
         // Mirrors the example fabric project, otherwise tons of dependencies are shaded that shouldn't be
-        configurations = listOf(project.configurations.shadow.get())
+        configurations = listOf(project.configurations.getByName("shadow"))
+        archiveBaseName.set("${project.name}-shaded")
+        mergeServiceFiles()
+    }
 
-        // The remapped shadowJar is the final desired mod jar
+    // This task combines the output of the "jar" task, which includes JiJ dependencies,
+    // and the shadowJar for the final jar.
+    // thanks bluemap
+    // https://github.com/BlueMap-Minecraft/BlueMap/blob/cfe73115dc4d1bdd97bc659f41364da65a6a2179/implementations/fabric/build.gradle.kts#L93-L107
+    register<Jar>("mergeShadowAndJarJar") {
+        dependsOn( tasks.shadowJar, tasks.jar )
+        // from sources / final name are configured in the respective projects
         archiveVersion.set("")
+        archiveClassifier.set("")
     }
 
-    remapJar {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.get().archiveFile)
-        archiveClassifier.set("")
-        archiveVersion.set(project.version.toString())
-    }
+    tasks.register<Copy>("renameModrinthJar") {
+        val sourceJar = tasks.named<Jar>("mergeShadowAndJarJar")
+        dependsOn(sourceJar)
 
-    register("remapModrinthJar", RemapJarTask::class) {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.get().archiveFile)
-        archiveVersion.set(project.version.toString() + "+build."  + System.getenv("GITHUB_RUN_NUMBER"))
-        archiveClassifier.set("")
+        from(sourceJar.flatMap { it.archiveFile })
+        into(layout.buildDirectory.dir("libs"))
+
+        rename { "${(project)}.jar" }
     }
 
     build {
-        dependsOn(remapJar)
+        dependsOn(tasks.getByName("mergeShadowAndJarJar"))
     }
 }
 
@@ -62,7 +64,7 @@ modrinth {
     syncBodyFrom.set(rootProject.file("README.md").readText())
     changelog.set(rootProject.file("CHANGELOG.md").readText())
 
-    uploadFile.set(tasks.getByPath("remapModrinthJar"))
-    gameVersions.addAll("1.21.3")
+    uploadFile.set(tasks.getByPath("renameModrinthJar"))
+    gameVersions.addAll("26.1")
     failSilently.set(false)
 }
