@@ -1,4 +1,6 @@
 ![Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)
+![Fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_64h.png)
+<img width="195" height="64" alt="NeoForge" src="https://github.com/user-attachments/assets/1b788120-afff-4923-a133-7dcf4f441e16"/>
 
 # Hurricane-Modded
 An unofficial Fabric/NeoForge port of GeyserMC's Hurricane plugin, formerly known as Camotoy's GeyserHacks.
