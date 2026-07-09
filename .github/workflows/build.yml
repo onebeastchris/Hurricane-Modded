@@ -5,46 +5,52 @@ on:
   push:
    paths-ignore:
      - '.gitignore'
-     - 'CONTRIBUTING.md'
-     - 'LICENSE'
+     - 'LICENSE.md'
      - 'README.md'
-     - 'licenseheader.txt'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@72f2cec99f417b1a1c5e2e88945068983b7965f9
-      - name: Change wrapper permissions
+      - name: Checkout Repository
+        uses: actions/checkout@e8d4307400f9427dba7cb98e488d6ab85f1cec5f
+
+      - name: Change Gradle Wrapper Permissions
         run: chmod +x ./gradlew
-      - uses: gradle/wrapper-validation-action@56b90f209b02bf6d1deae490e9ef18b21a389cd4
-      - uses: actions/setup-java@4075bfc1b51bf22876335ae1cd589602d60d8758
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation@6550634d3eb14a20275549de1588a83267023d42
+
+      - name: Setup JDK
+        uses: actions/setup-java@fe9b749bcb36d9ac2a6c2cb1737d49b80e57ea06
         with:
           distribution: 'temurin'
           java-version: 25
-      - name: Publish to Modrinth (Fabric)
-        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
+
+      - name: Archive Artifacts (Hurricane-Fabric)
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: success()
+        with:
+          name: Hurricane Fabric
+          path: fabric/build/libs/hurricane-fabric.jar
+          if-no-files-found: error
+
+      - name: Archive Artifacts (Hurricane-NeoForge)
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: success()
+        with:
+          name: Hurricane NeoForge
+          path: neoforge/build/libs/hurricane-neoforge.jar
+          if-no-files-found: error
+
+      - name: Publish to Modrinth (Hurricane-Fabric)
+        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '26.2' }}
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
         run: ./gradlew fabric:modrinth
 
-      - name: Publish to Modrinth (NeoForge)
-        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
+      - name: Publish to Modrinth (Hurricane-NeoForge)
+        if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '26.2' }}
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
         run: ./gradlew neoforge:modrinth
-
-      - name: Archive Artifacts (fabric)
-        uses: actions/upload-artifact@v4
-        if: success()
-        with:
-          name: Hurricane Fabric
-          path: fabric/build/libs/hurricane-fabric-*.jar
-          if-no-files-found: error
-      - name: Archive Artifacts (neoforge)
-        uses: actions/upload-artifact@v4
-        if: success()
-        with:
-          name: Hurricane NeoForge
-          path: neoforge/build/libs/hurricane-neoforge-*.jar
-          if-no-files-found: error
