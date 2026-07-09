@@ -22,11 +22,6 @@ public abstract class Hurricane {
 		}
 
 		LOGGER.info("Started Hurricane!");
-
-		if (Config.shouldWarn) {
-			LOGGER.warn("Removed the item steerable configuration option, as Geyser now supports it natively! " +
-					"Please update Geyser if you have not done so already!");
-		}
 	}
 
 	public abstract void registerBlockPlaceEvent();
