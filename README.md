@@ -1,21 +1,28 @@
-![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)
- 
+![Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)
+
 # Hurricane-Modded
-A Fabric/NeoForge port of GeyserMC's Hurricane (before: Camotoys GeyserHacks) plugin. But for modded servers!
-Download on [Modrinth](https://modrinth.com/mod/hurricane)
+An unofficial Fabric/NeoForge port of GeyserMC's Hurricane plugin, formerly known as Camotoy's GeyserHacks.
 
-Various workarounds for Geyser players that modify the server in order to achieve better playability.
-Issues with each workaround are listed in the config! Take your time to read them as the workarounds in this mod can be used for exploitative purposes.
+This mod provides various workarounds for Geyser players that modify the server in order to achieve better playability. 
 
-Fixes:
+Issues with each workaround are listed in the config! 
 
-- Bamboo and dripstone collision (by setting them to no server-side collision)
-- GeyserMC/Geyser#638 by letting the server control entities, just like Bedrock expects it to
-- optionally: suppress "Mismatch in destroy block pos" warnings
+Take your time to read them as the workarounds in this mod can be used for exploitative purposes.
 
-This project is unaffiliated with GeyserMC, and this port is not supported/made by Camotoy. However, this mod is made to work with Geyser.
-If you need help/support, please use the "issues" tab here to report issues, or join the support discord: https://discord.gg/nzrJbNMR9S
+## Features
+- Fixes bamboo and dripstone collision for Geyser players by setting them to no server-side collision.
+- Fixes [GeyserMC/Geyser#638](https://github.com/GeyserMC/Geyser/issues/638) by letting the server control entities, just as Bedrock expects.
+- Provides a config option to suppress "Mismatch in destroy block pos" warnings.
 
-Currently supported versions: 1.21 (Fabric/NeoForge); older builds are available on Modrinth (1.19-1.20.6)
+## Usage
+You can download Hurricane-Fabric or Hurricane-NeoForge on [Modrinth](https://modrinth.com/mod/hurricane).
 
-Download on [Modrinth](https://modrinth.com/mod/hurricane)
+## Compatibility 
+Hurricane-Fabric and Hurricane-NeoForge currently support Fabric/NeoForge 26.2.
+
+Older builds of Hurricane-Fabric or Hurricane-NeoForge are available on [Modrinth](https://modrinth.com/mod/hurricane).
+
+## Support
+This project is unaffiliated with GeyserMC and Camotoy. Please do not ask in the GeyserMC Discord server for Hurricane-Fabric or Hurricane-NeoForge support.
+
+If you need Hurricane-Fabric or Hurricane-NeoForge support, please use the [Issues](https://github.com/onebeastchris/Hurricane-Modded/issues) GitHub tab to report issues or join the support [Discord server](https://discord.gg/nzrJbNMR9S).
