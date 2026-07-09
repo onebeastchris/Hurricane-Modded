@@ -10,6 +10,7 @@ tasks {
         archiveClassifier.set("unshaded")
         from(project.rootProject.file("LICENSE"))
     }
+
     val shadowJar = named<ShadowJar>("shadowJar") {
         archiveBaseName.set(project.name)
         archiveVersion.set("")
@@ -24,6 +25,7 @@ tasks {
             }
         }
     }
+
     named("build") {
         dependsOn(shadowJar)
     }

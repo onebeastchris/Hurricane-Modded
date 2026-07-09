@@ -11,7 +11,6 @@ import net.onebeastchris.hurricane.Hurricane;
 
 @Mod("hurricane")
 public class NeoForgeHurricaneMod extends Hurricane {
-
     public NeoForgeHurricaneMod() {
         super();
         NeoForge.EVENT_BUS.addListener(this::onServerStart);
@@ -28,11 +27,13 @@ public class NeoForgeHurricaneMod extends Hurricane {
 
     public void onBlockPlace(PlayerInteractEvent.RightClickBlock event) {
         Item item = event.getItemStack().getItem();
+
         if (item.equals(Items.BAMBOO)) {
             if (event.getPos().equals(event.getEntity().blockPosition())) {
                 event.setCancellationResult(InteractionResult.FAIL);
             }
         }
+
         if (item.equals(Items.POINTED_DRIPSTONE)) {
             if (event.getPos().equals(event.getEntity().blockPosition().below())) {
                 event.setCancellationResult(InteractionResult.FAIL);

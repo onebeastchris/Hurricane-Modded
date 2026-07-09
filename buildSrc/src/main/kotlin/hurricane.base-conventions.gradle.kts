@@ -9,10 +9,10 @@ tasks {
                 "id" to "hurricane",
                 "name" to "Hurricane",
                 "version" to project.version,
-                "description" to "Hacky fixes to make Bedrock players that join via Geyser happy. Fabric port of Hurricane by GeyserMC.",
-                "url" to "https://geysermc.org",
+                "description" to "An unofficial Fabric/NeoForge port of GeyserMC's Hurricane plugin, formerly known as Camotoy's GeyserHacks.",
+                "url" to "https://github.com/onebeastchris/Hurricane-Modded",
                 "author" to "onebeastchris",
-                "minecraft_version" to "26.1"
+                "minecraft_version" to "26.2"
             )
         }
     }

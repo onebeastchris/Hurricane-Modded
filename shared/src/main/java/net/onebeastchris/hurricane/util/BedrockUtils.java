@@ -3,13 +3,10 @@ package net.onebeastchris.hurricane.util;
 import net.onebeastchris.hurricane.Hurricane;
 import org.geysermc.floodgate.api.FloodgateApi;
 import org.geysermc.geyser.api.GeyserApi;
-
 import java.util.UUID;
 
 public class BedrockUtils {
-
     private static boolean floodgatePresent;
-
     private static boolean geyserPresent = false;
 
     static {
@@ -18,6 +15,7 @@ public class BedrockUtils {
             floodgatePresent = true;
         } catch (ClassNotFoundException e) {
             floodgatePresent = false;
+
             try {
                 Class.forName("org.geysermc.geyser.api.GeyserApi");
                 geyserPresent = true;
@@ -29,7 +27,7 @@ public class BedrockUtils {
     }
 
     public static boolean isGeyserOrFloodgateInstalled() {
-            return floodgatePresent || geyserPresent;
+        return floodgatePresent || geyserPresent;
     }
 
     public static boolean isBedrockPlayer(UUID uuid){

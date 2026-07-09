@@ -17,7 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BambooStalkBlock.class)
 public class BambooBlockMixin {
-
 	@Inject(method = "getCollisionShape", at = @At("HEAD"), cancellable = true)
 	private void getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext, CallbackInfoReturnable<VoxelShape> cir) {
 		// We have a collision context here, so we can make this apply only for Bedrock players.
