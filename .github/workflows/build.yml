@@ -19,7 +19,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation@6550634d3eb14a20275549de1588a83267023d42
+        uses: gradle/actions/wrapper-validation@6550634d3eb14a20275549de1588a83267023d42
 
       - name: Setup JDK
         uses: actions/setup-java@fe9b749bcb36d9ac2a6c2cb1737d49b80e57ea06
