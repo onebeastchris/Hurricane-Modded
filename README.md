@@ -7,7 +7,7 @@ An unofficial Fabric/NeoForge port of GeyserMC's Hurricane plugin, formerly know
 
 This mod provides various workarounds for Geyser players that modify the server in order to achieve better playability. 
 
-Issues with each workaround are listed in the config! 
+Issues with each workaround are listed in the mod's config! 
 
 **Please take your time to read them as the workarounds in this mod can be used for exploitative purposes.**
 
