@@ -9,7 +9,7 @@ This mod provides various workarounds for Geyser players that modify the server 
 
 Issues with each workaround are listed in the config! 
 
-Take your time to read them as the workarounds in this mod can be used for exploitative purposes.
+**Please take your time to read them as the workarounds in this mod can be used for exploitative purposes.**
 
 ## Features
 - Fixes bamboo and dripstone collision for Geyser players by setting them to no server-side collision.
