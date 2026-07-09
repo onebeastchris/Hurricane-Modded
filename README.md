@@ -13,7 +13,6 @@ Take your time to read them as the workarounds in this mod can be used for explo
 
 ## Features
 - Fixes bamboo and dripstone collision for Geyser players by setting them to no server-side collision.
-- Fixes [GeyserMC/Geyser#638](https://github.com/GeyserMC/Geyser/issues/638) by letting the server control entities, just as Bedrock expects.
 - Provides a config option to suppress "Mismatch in destroy block pos" warnings.
 
 ## Usage
