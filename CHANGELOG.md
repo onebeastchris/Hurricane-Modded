@@ -1,3 +1,2 @@
-Hurricane 2.1:
-- Added config version
-- Removed the item steerables workaround due to it being implemented natively in Geyser
+Hurricane 2.1.1:
+- Add support for Minecraft: Java Edition 26.2
