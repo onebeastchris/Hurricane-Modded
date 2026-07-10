@@ -3,7 +3,7 @@ architectury {
     neoForge()
 }
 
-val common: Configuration by configurations.creating
+val common = configurations.create("common")
 // Without this, the mixin config isn't read properly with the runServer neoforge task
 val developmentNeoForge: Configuration = configurations.getByName("developmentNeoForge")
 

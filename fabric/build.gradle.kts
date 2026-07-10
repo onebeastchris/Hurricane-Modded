@@ -3,7 +3,7 @@ architectury {
     fabric()
 }
 
-val common: Configuration by configurations.creating
+val common = configurations.create("common")
 val developmentFabric: Configuration = configurations.getByName("developmentFabric")
 
 configurations {
