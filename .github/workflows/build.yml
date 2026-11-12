@@ -54,6 +54,7 @@ jobs:
           set +e
           for p in fabric neoforge; do
             mkdir -p $p/run && echo "eula=true" > $p/run/eula.txt
+            mkdir -p $p/run/config && printf 'collision-fixes {\n  bamboo=true\n  pointed-dripstone=true\n}\nsuppress-warnings=true\nversion=1\n' > $p/run/config/hurricane.conf
             printf 'online-mode=false\nlevel-type=minecraft\\:flat\n' > $p/run/server.properties
             timeout 420 ./gradlew :$p:runServer --console=plain > $p-server.log 2>&1
             echo "=== $p tail"; tail -n 60 $p-server.log

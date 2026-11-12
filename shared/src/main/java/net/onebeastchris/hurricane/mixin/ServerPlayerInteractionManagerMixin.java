@@ -8,7 +8,8 @@ import org.spongepowered.asm.mixin.injection.Slice;
 
 @Mixin(value = ServerPlayerGameMode.class)
 public class ServerPlayerInteractionManagerMixin {
-    @Redirect(method = "handleBlockBreakAction", require = 0,
+    // 26.3 moved this warning from handleBlockBreakAction into abortDestroyBlock
+    @Redirect(method = "abortDestroyBlock", require = 0,
             slice = @Slice(from = @At(value = "CONSTANT", args = "stringValue=Mismatch in destroy block pos: {} {}", ordinal = 0)),
             at = @At(value = "INVOKE", target = "Lorg/slf4j/Logger;warn(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V"))
     private void GeyserHacks$onMismatchInDestroyBlockPos(org.slf4j.Logger logger, String format, Object arg1, Object arg2) {

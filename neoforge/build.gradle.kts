@@ -22,6 +22,11 @@ dependencies {
     include(libs.configurate.core)
     include(libs.geantyref)
     include(libs.typesafe)
+
+    localRuntime(libs.configurate.hocon)
+    localRuntime(libs.configurate.core)
+    localRuntime(libs.geantyref)
+    localRuntime(libs.typesafe)
 }
 
 tasks {
