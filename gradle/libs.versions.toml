@@ -2,8 +2,8 @@
 geyser = "2.9.5-SNAPSHOT"
 shadow = "9.4.1"
 architectury-plugin = "3.5-SNAPSHOT"
-architectury-loom = "1.14-SNAPSHOT"
-minecraft-version = "26.1.2"
+architectury-loom = "1.17-SNAPSHOT"
+minecraft-version = "26.3"
 minotaur = "2.+"
 lombok = "9.5.0"
 mixin = "0.8.5"
@@ -14,11 +14,11 @@ asm = "5.2"
 floodgate = "2.2.5-SNAPSHOT"
 
 # fabric
-fabric-loader = "0.19.2"
-fabric-api = "0.147.0+26.1.2"
+fabric-loader = "0.19.5"
+fabric-api = "0.163.0+26.3"
 
 # neoforge
-neoforge-version = "26.1.2.31-beta"
+neoforge-version = "26.3.0.+"
 
 [libraries]
 geyser-api = { group = "org.geysermc.geyser", name = "api", version.ref = "geyser" }
