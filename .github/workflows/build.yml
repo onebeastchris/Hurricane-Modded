@@ -43,6 +43,9 @@ jobs:
           for c in net.minecraft.world.level.block.PointedDripstoneBlock net.minecraft.world.level.block.BambooStalkBlock net.minecraft.world.level.block.state.BlockBehaviour; do
             echo "##### $c" >> inspect.txt; javap -p -cp "$J" $c | grep -iE 'shape|class ' >> inspect.txt
           done
+          echo "##### SpeleothemBlock" >> inspect.txt; javap -p -cp "$J" net.minecraft.world.level.block.SpeleothemBlock >> inspect.txt
+          unzip -l "$J" | grep -i 'Speleothem\|Dripstone' >> inspect.txt
+          echo "##### ServerPlayerGameMode full" >> inspect.txt; javap -p -c -constants -cp "$J" net.minecraft.server.level.ServerPlayerGameMode > spgm.txt; grep -nE '^  [a-z].*\(|Mismatch|Logger.warn|Logger.debug' spgm.txt >> inspect.txt
           echo "##### ServerPlayerGameMode strings" >> inspect.txt
           javap -p -c -constants -cp "$J" net.minecraft.server.level.ServerPlayerGameMode | grep -iE 'Mismatch|ldc.*destroy|handleBlockBreakAction' >> inspect.txt
           cat inspect.txt
