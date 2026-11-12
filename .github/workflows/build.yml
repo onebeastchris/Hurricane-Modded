@@ -34,6 +34,18 @@ jobs:
           grep neoforge-version gradle/libs.versions.toml
       - name: Build
         run: ./gradlew build --stacktrace
+      - name: Inspect 26.3 classes
+        if: always()
+        run: |
+          J=$(find ~/.gradle/caches -path '*loom*' -name 'minecraft-*.jar' -size +5M 2>/dev/null | grep -viE 'sources|neoforge' | head -1)
+          [ -z "$J" ] && J=$(find ~/.gradle/caches . -name '*.jar' -size +10M 2>/dev/null | while read f; do unzip -l "$f" 2>/dev/null | grep -q 'net/minecraft/world/level/block/PointedDripstoneBlock.class' && echo "$f" && break; done)
+          echo "jar: $J" | tee inspect.txt
+          for c in net.minecraft.world.level.block.PointedDripstoneBlock net.minecraft.world.level.block.BambooStalkBlock net.minecraft.world.level.block.state.BlockBehaviour; do
+            echo "##### $c" >> inspect.txt; javap -p -cp "$J" $c | grep -iE 'shape|class ' >> inspect.txt
+          done
+          echo "##### ServerPlayerGameMode strings" >> inspect.txt
+          javap -p -c -constants -cp "$J" net.minecraft.server.level.ServerPlayerGameMode | grep -iE 'Mismatch|ldc.*destroy|handleBlockBreakAction' >> inspect.txt
+          cat inspect.txt
       - name: Smoke test - boot a dedicated server with the mod (fabric + neoforge)
         run: |
           set +e
@@ -50,7 +62,7 @@ jobs:
       - name: Push jars + logs to build-output branch
         if: always()
         run: |
-          mkdir -p /tmp/out && cp fabric/build/libs/hurricane-fabric*.jar neoforge/build/libs/hurricane-neoforge*.jar /tmp/out/ 2>/dev/null; cp *-server.log /tmp/out/ 2>/dev/null; ls -la /tmp/out
+          mkdir -p /tmp/out && cp fabric/build/libs/hurricane-fabric*.jar neoforge/build/libs/hurricane-neoforge*.jar /tmp/out/ 2>/dev/null; cp *-server.log inspect.txt /tmp/out/ 2>/dev/null; ls -la /tmp/out
           cd /tmp/out && git init -q -b build-output && git add -A && git -c user.name=ci -c user.email=ci@localhost commit -qm "build ${GITHUB_SHA}" && git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" build-output
       - name: Publish to Modrinth (Fabric)
         if: ${{ success() && github.repository == 'onebeastchris/Hurricane-Modded' && github.ref_name == '1.21' }}
