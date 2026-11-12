@@ -26,6 +26,12 @@ jobs:
           distribution: 'temurin'
           java-version: 25
       - uses: gradle/actions/setup-gradle@v4
+      - name: Pin latest NeoForge 26.3 build
+        run: |
+          V=$(curl -s https://maven.neoforged.net/releases/net/neoforged/neoforge/maven-metadata.xml | grep -oE '<version>26\.3\.0\.[0-9]+(-beta)?</version>' | sed -E 's#</?version>##g' | sort -t. -k4,4n | tail -1)
+          echo "NeoForge: $V"; test -n "$V"
+          sed -i -E "s/^neoforge-version = .*/neoforge-version = \"$V\"/" gradle/libs.versions.toml
+          grep neoforge-version gradle/libs.versions.toml
       - name: Build
         run: ./gradlew build --stacktrace
       - name: Smoke test - boot a dedicated server with the mod (fabric + neoforge)
